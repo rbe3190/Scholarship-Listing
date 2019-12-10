@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<article class="leading-loose post">
+  <h1 class="font-semibold">
+    {% assign topic = site.topics | where:"category", page.category | first %}
+    {% if topic.show_on_homepage %}
+      {{ topic.category }}:
+    {% endif %}
+    {{ page.title | markdownify | remove:'<p>' | remove:'</p>' }}
+  </h1>
+  {{ content }}
+</article>
+
+<!-- Sharing -->
+{% comment %}
+{% include post_sharing.html %}
+{% endcomment %}
+<!-- End of Sharing -->
+
+<!-- Post Meta -->
+{% include post_meta.html %}
+<!-- End of Post Meta -->
+
+<!-- Related Posts -->
+{% include post_related.html %}
+<!-- End of Related Posts -->

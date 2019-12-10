@@ -1,0 +1,18 @@
+<h2 class="w-1/4 self-center">
+  <a href="/">
+    {{ site.title }}
+  </a>
+  {% comment %}<small>{{ site.tagline }}</small>{% endcomment %}
+</h2>
+
+<nav class="w-3/4 self-center text-right">
+  <ul>
+  {% for link in site.data.navigation.links %}
+    {% if link.show_in_header == true %}
+      <li class="inline-block py-2 px-2">
+        <a href="{{ link.url }}"{% if link.aria-label %} aria-label="{{ link.aria-label }}" title="{{ link.aria-label }}"{% endif %}>{{ link.title }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+</nav>

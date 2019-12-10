@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<article class="leading-loose">
+  <h1>
+    {{ page.playlist }}
+  </h1>
+  <a href="{{ page.spotify }}" title="{{ page.playlist }}">
+    <img src="{{ page.playlist_image.url }}" height="{{ page.playlist_image.height }}" width="{{ page.playlist_image.width }}">
+  </a>
+  <p><a href="{{ page.spotify }}">Listen on Spotify</a></p>
+  <ul>
+  {% for track in page.tracks %}
+    <li>
+      <strong><a href="{{ track.spotify }}">{{ track.track }}</a></strong>
+      {{ track.artist }} -
+      {{ track.album }}
+      {% if track.starred %}:star:{% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+</article>

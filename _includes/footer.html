@@ -1,0 +1,15 @@
+<nav class="mb-4 w-full text-center text-md">
+  <ul>
+  {% for link in site.data.navigation.links %}
+    {% if link.show_in_footer == true %}
+      <li class="inline-block py-2 px-2 hover:text-blue-dark">
+        <a class="no-underline hover:underline hover:text-blue-dark" href="{{ link.url }}"{% if link.aria-label %} aria-label="{{ link.aria-label }}" title="{{ link.aria-label }}"{% endif %}>{{ link.title }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+</nav>
+<section class="mb-4 w-full text-center text-md">
+  &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>
+  &mdash; <span><a href="https://3190rbe.org" target="_blank">Rotaract Bangalore East</a></span>
+</section>

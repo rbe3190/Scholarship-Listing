@@ -1,0 +1,22 @@
+---
+# Layouts must stay in HTML
+---
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body class="text-xl">
+    <div class="container mx-auto max-w-3xl">
+      <header class="flex h-36 my-4 pb-8 align-baseline border-b-2 border-dashed">
+        {% include header.html %}
+      </header>
+
+      {{ content }}
+
+      <footer class="my-8 pt-4 border-t-2 border-dashed">
+        {% include footer.html %}
+      </footer>
+    </div>
+    <script src="//instant.page/2.0.1" type="module" defer integrity="sha384-4Duao6N1ACKAViTLji8I/8e8H5Po/i/04h4rS5f9fQD6bXBBZhqv5am3/Bf/xalr"></script>
+    {% include analytics.html %}
+  </body>
+</html>

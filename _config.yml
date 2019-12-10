@@ -1,0 +1,116 @@
+# Site settings
+assets:
+  cachebust: hard
+title: RBE
+name: Rotaract Bangalore East
+email: 3190rbe@gmail.com
+description: >
+  Listing all the sponssorship opportunities
+baseurl: ""
+url: ""
+relative_permalinks: false
+permalink: :year/:title/  # permalink: date
+future: true
+paginate: 100
+
+plugins:
+  # - jekyll-archives
+  # - jekyll-coffeescript
+  # - jekyll-crosspost-to-medium
+  # - octopress-autoprefixer
+  - jekyll-feed
+  - jekyll-mentions
+  - jekyll-paginate
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jemoji
+  - thin
+
+include:
+  - _pages
+
+exclude:
+  - "*.js"
+  - "*/src/*"
+  - .bumpversion.cfg
+  - .gitignore
+  - .vendor
+  - _pages/categories.html
+  - _pages/tags.html
+  - Gemfile
+  - Gemfile.lock
+  - Makefile
+  - modd.conf
+  - node_modules
+  - plugins
+  - Procfile
+  - purgecss.config.js
+  - Rakefile
+  - README.md
+
+markdown: kramdown
+kramdown:
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+collections:  # process the _data folder
+  playlists:
+    output: true
+    permalink: /:collection/:name/
+  projects:
+    output: false
+    permalink: /:collection/:name/
+  topics:
+    output: true
+    permalink: /:collection/:name/
+
+defaults:  # Frontmatter fallback settings
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/dcus-2017-bw.jpg
+
+# SEO Plugin settings
+
+author: 3190rbe
+
+facebook:
+  app_id: 182545102225662
+
+logo: /assets/images/dcus-2017-bw.jpg
+
+social:
+  name: Rotaract Bangalore East
+  links:
+    - https://twitter.com/3190rbe
+    - https://www.facebook.com/3190rbe
+
+twitter:
+  username: "3190rbe"
+
+# Needed for the default template... not sure if they are used anywhere else
+github_username: jefftriplett
+twitter_username: "3190rbe"
+
+# Jekyll Mentions
+
+jekyll-mentions:
+  base_url: https://twitter.com
+
+# Jekyll to Medium
+
+# jekyll-crosspost_to_medium: 
+#   backdate: true
+#   #cache: .jekyll-crosspost_to_medium
+#   enabled: true
+#   license: all-rights-reserved
+#   status: draft
+#   text: '<p><i>Your (optional) signoff for the post.</i></p>'
+
+# Custom vars
+# version: 0.01.0
+google-fonts-family: PT+Serif:400,400italic,700|PT+Sans:400|Alegreya
